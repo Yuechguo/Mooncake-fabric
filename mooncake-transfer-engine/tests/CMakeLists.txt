@@ -212,6 +212,11 @@ if(USE_HIP)
   target_link_libraries(hip_transport_test PUBLIC transfer_engine gtest
                                                   gtest_main)
   add_test(NAME hip_transport_test COMMAND hip_transport_test)
+
+  add_executable(hip_fabric_test ${WORKSPACE}/hip_fabric_test.cpp)
+  target_link_libraries(hip_fabric_test PUBLIC transfer_engine gtest
+                                               gtest_main)
+  add_test(NAME hip_fabric_test COMMAND hip_fabric_test)
 endif()
 
 if(USE_UBSHMEM)
